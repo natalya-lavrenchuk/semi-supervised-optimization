@@ -35,23 +35,12 @@ The error is defined by two terms:
 
 The loss function is:  
 
-\[
-\sum_{i=1}^{l} \sum_{j=1}^{\mu} w_{ij}(y_j - \bar{y}_i)^2 \;+\; 
-\frac{1}{2} \sum_{i=1}^{\mu} \sum_{j=1}^{\mu} \bar{w}_{ij}(y_i - y_j)^2
-\]
-
-Where:  
-- \( l \) = number of labeled points  
-- \( \mu \) = number of unlabeled points  
-- \( w_{ij} \) = weight between labeled \(i\) and unlabeled \(j\)  
-- \( \bar{w}_{ij} \) = weight between unlabeled points \(i\) and \(j\)  
+![Loss Function](images/loss_function.png)
+ 
 
 To perform optimization, we consider the derivative of the loss function:
 
-\[
-2 \cdot \sum_{i=1}^{l} w_{ij}(y_j - \bar{y}_i) \;+\; 
-2 \cdot \sum_{i=1}^{\mu} \bar{w}_{ij}(y_j - y_i)
-\]
+![Loss Function Gradient](images/loss_function_derivative.png)
 
 ---
 
