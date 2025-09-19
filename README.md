@@ -47,7 +47,7 @@ To perform optimization, we consider the derivative of the loss function:
 ## Results
 - On the **synthetic dataset (loss function)**, the model achieved an **accuracy of ~70%**  
 - On the **breast cancer dataset**, the model achieved an **accuracy of ~68%**  
-- The model reached a **recall of ~73%** on the cancer dataset, showing strong sensitivity in detecting malignant cases  
+- The model reached a **recall of ~85%** on the cancer dataset, showing strong sensitivity in detecting malignant cases  
 - BCGD with Gauss-Southwell updates showed faster convergence than GD  
 
 
