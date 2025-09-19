@@ -27,6 +27,34 @@ We then apply the same framework to the publicly available **Breast Cancer Wisco
 
 ---
 
+## 🔢 Loss Function
+The error is defined by two terms:  
+
+1. The similarity of **unlabeled points** to those that are already **labeled**  
+2. The similarity of **unlabeled points** to other **unlabeled points**  
+
+The loss function is:  
+
+\[
+\sum_{i=1}^{l} \sum_{j=1}^{\mu} w_{ij}(y_j - \bar{y}_i)^2 \;+\; 
+\frac{1}{2} \sum_{i=1}^{\mu} \sum_{j=1}^{\mu} \bar{w}_{ij}(y_i - y_j)^2
+\]
+
+Where:  
+- \( l \) = number of labeled points  
+- \( \mu \) = number of unlabeled points  
+- \( w_{ij} \) = weight between labeled \(i\) and unlabeled \(j\)  
+- \( \bar{w}_{ij} \) = weight between unlabeled points \(i\) and \(j\)  
+
+To perform optimization, we consider the derivative of the loss function:
+
+\[
+2 \cdot \sum_{i=1}^{l} w_{ij}(y_j - \bar{y}_i) \;+\; 
+2 \cdot \sum_{i=1}^{\mu} \bar{w}_{ij}(y_j - y_i)
+\]
+
+---
+
 ## Results
 - On the **synthetic dataset (loss function)**, the model achieved an **accuracy of ~70%**  
 - On the **breast cancer dataset**, the model achieved an **accuracy of ~68%**  
